@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class damage_calculator : MonoBehaviour
+public class Damage_Calculator 
 {
-    // Start is called before the first frame update
-    void Start()
+    public static int CalculateDamage(int amount, float mitigationPercent)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return Converrt.ToInt32(amount * mitigationPercent);
     }
 }

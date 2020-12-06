@@ -19,6 +19,8 @@ public class Button_for_new_word : MonoBehaviour
       
         Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
         brickPosition += new Vector3(0, -100, 0);
-        
+        Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
+        brickPosition += new Vector3(0, -200, 0);
+
     }
 }

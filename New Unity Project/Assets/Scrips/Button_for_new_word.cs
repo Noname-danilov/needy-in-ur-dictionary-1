@@ -7,7 +7,9 @@ public class Button_for_new_word : MonoBehaviour
     public GameObject prefab;
     public GameObject canvas;
     Vector3 brickPosition = new Vector3(250, 700, 0);
-
+    public GameObject inst1;
+    public GameObject inst2;
+    public GameObject button_1;
     void Update()
     {
 
@@ -16,11 +18,18 @@ public class Button_for_new_word : MonoBehaviour
 
     public void OnMouseClick ()
     {
-      
-        Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
+
+        inst1 = Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
         brickPosition += new Vector3(0, -100, 0);
-        Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
+    
+        inst2 = Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
         brickPosition += new Vector3(0, -200, 0);
+
+
+        button_1.GetComponent<WordTransfer>().inputField_1 = inst1;
+        button_1.GetComponent<WordTransfer>().inputField_2 = inst2;
+
+        
 
     }
 }

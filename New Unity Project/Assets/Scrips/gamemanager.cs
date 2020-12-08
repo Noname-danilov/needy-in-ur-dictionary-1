@@ -15,7 +15,7 @@ public class gamemanager : MonoBehaviour
     public InputField myInputField = null; //Force Unity to serialize a private field.
     public GameObject tabletInterface;
     public int scoreValue;
-    public scoremanager scoreAccess; //This is so the question control can have access to the scoremanager.
+   // public scoremanager scoreAccess; //This is so the question control can have access to the scoremanager.
     public Button tabletButton;
     public Button roomButton;
     public GameObject inactiveButton; //room button on the tablet view.
@@ -62,7 +62,7 @@ public class gamemanager : MonoBehaviour
         {
             myInputField.image.color = Color.white; //change background of inputfield to white with right answer.
             tabletInterface.SetActive(false);
-            scoreAccess.AddScore(scoreValue);
+            //scoreAccess.AddScore(scoreValue);
             myInputField.text = "";
             inactiveButton.SetActive(true); //reactivates room button for the view tablet function
             Debug.Log("That is Correct");

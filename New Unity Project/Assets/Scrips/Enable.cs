@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enable : MonoBehaviour
 {
     public GameObject gameObject;
-    bool TrueFalse;
+    bool TrueFalse = true;
 
     public void Start()
     {
@@ -21,17 +21,33 @@ public class Enable : MonoBehaviour
 
     public void retarded_funcion()
     {
-        gameObject.GetComponent<Text>().enabled = false;
+        if (TrueFalse)
+        {
+            gameObject.GetComponent<Text>().enabled = false;
+            TrueFalse = false;
+        }
+        else
+        {
+            gameObject.GetComponent<Text>().enabled = true;
+            TrueFalse = true;
+        }
+        
     }
-    public void OnMouseClick()
-    {
 
-    if (gameObject.GetComponent<Text>().enabled = false;
+    //public void OnMouseClick()
+    //{
+    //    if TrueFalse.GetComponent<Text>().enabled = false;
+    //    {
+    //        TrueFalse.GetComponent<Text>().enabled = true;
+    //    }
+
+    //}
+    public void retarded_funcion2()
     {
+        
         gameObject.GetComponent<Text>().enabled = true;
     }
 
-    }
 
 
 }

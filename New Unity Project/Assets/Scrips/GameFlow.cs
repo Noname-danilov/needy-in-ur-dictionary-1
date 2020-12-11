@@ -5,18 +5,25 @@ using UnityEngine;
 public class GameFlow : MonoBehaviour
 {
     public Transform aTestObj;
-    List<string> questions = new List<string>() { "light blue", "blue", "brown", "green", "fortegreen", "black", "lime", "orange", "pink", "purple" };
-    List<string> correctSelection = new List<string>() { "choice 1" }
-    public int textPointer;
+    List<string> questions = new List<string>() { "", "Purple", "Tan", "Brown", "Green", "White", "Black", "Lime", "Orange", "Pink" };
+    List<string> correctSelection = new List<string>() { "", "choice 2", "choice 3", "choice 1", "choice 1", "choice 3", "choice 2", "choice 2", "choice 2", "choice 2", "choice 2" };
+    public static string currentSelection;
+    public static int textPointer;
+
     // Start is called before the first frame update
     void Start()
     {
-        textPointer = Random.Range(0, 11);
+        textPointer = Random.Range (1, 7);
     }
 
     // Update is called once per frame
     void Update()
     {
         aTestObj.GetComponent<TextMesh>().text = questions[textPointer];
+
+        if (currentSelection==correctSelection[textPointer])
+        {
+            Debug.Log("Correct");
+        }
     }
 }

@@ -19,11 +19,41 @@ public class ImageControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameFlow.textPointer == 1)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image1;
+        }
+
+        if (GameFlow.textPointer == 2)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image2;
+        }
+
+        if (GameFlow.textPointer == 3)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image3;
+        }
+
+        if (GameFlow.textPointer == 4)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image4;
+        }
+
+        if (GameFlow.textPointer == 5)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image5;
+        }
+
+        if (GameFlow.textPointer == 6)
+        {
+            GetComponent<SpriteRenderer> ().sprite = image6;
+        }
     }
 
     void OnMouseDown()
     {
+        GameFlow.currentSelection = gameObject.name;
         Debug.Log(gameObject.name);
+
     }
 }

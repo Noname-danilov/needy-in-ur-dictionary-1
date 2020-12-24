@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: fb179fe488680544fa988fdc9df27b41
+    path: Assets/Scenes/Adding_new_word.unity
+    guid: 462c8788134ab09419bce94185c27ac8
   - enabled: 1
     path: Assets/Scenes/ModeSelection.unity
     guid: f57a2bb42b31f5e42a21975b14b6c906
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: abd596dffc09b5a4eba13d11c19780a3
+  - enabled: 1
+    path: Assets/Scenes/Quiz.unity
+    guid: c9ccc249a41e91f498bbaa66a219359b
   m_configObjects: {}

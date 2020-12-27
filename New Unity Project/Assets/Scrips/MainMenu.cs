@@ -6,14 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void ModeSelection()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    public void FlashCards()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Quiz()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void AddingNewWord()
+    {
+        SceneManager.LoadScene(4);
     }
 }

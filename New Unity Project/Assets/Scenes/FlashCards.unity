@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a96f94bc8566914da2721bbd10372b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFlow: {fileID: 979007483}
 --- !u!61 &75138169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -492,6 +493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2d55070248684693516f238c415ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   image1: {fileID: 21300000, guid: e15f5e977cbddde4285fa01d0d2a35dc, type: 3}
   image2: {fileID: 21300000, guid: 4ebbe01c5bc4d4447ae856f9ec4b2b8b, type: 3}
   image3: {fileID: 21300000, guid: 0dcddf7eb7e7ab344adf09bb37ba4b22, type: 3}
@@ -756,6 +764,7 @@ MonoBehaviour:
   aTestObj: {fileID: 1517485431}
   sysTextObj: {fileID: 430730885}
   scoreTextObj: {fileID: 37798192}
+  isClicked: 0
 --- !u!4 &979007484
 Transform:
   m_ObjectHideFlags: 0
@@ -910,6 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2d55070248684693516f238c415ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
   image1: {fileID: 21300000, guid: 3c452127ec753514da0634c08c1c73df, type: 3}
   image2: {fileID: 21300000, guid: 1ae219ea2bb85df459cdf453b799ff07, type: 3}
   image3: {fileID: 21300000, guid: 544444a2e71eec848b157b6f6559b005, type: 3}
@@ -990,6 +1000,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1005,6 +1020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1016,16 +1036,6 @@ PrefabInstance:
     - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3410977430118449297, guid: c76a8ed565276db4e8b48523015ade26,
@@ -1112,6 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2d55070248684693516f238c415ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
   image1: {fileID: 21300000, guid: 648b6dbe4893d3946be587dd5b03c6ab, type: 3}
   image2: {fileID: 21300000, guid: d78fbed59bac01e439126dfc7a6b762c, type: 3}
   image3: {fileID: 21300000, guid: 9c4f37be8311207419b9b0d13d329e23, type: 3}

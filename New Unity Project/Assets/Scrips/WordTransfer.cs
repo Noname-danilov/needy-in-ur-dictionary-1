@@ -15,6 +15,8 @@ public class WordTransfer : MonoBehaviour
 
     public void StoreWord()
     {
+        FindObjectOfType<ButtonHider>().EnableCreateButton();
+
         theWord1 = inputField_1.GetComponent<TMP_InputField>().text;
         theWord2 = inputField_2.GetComponent<TMP_InputField>().text;
         textDisplay.GetComponent<Text>().text = "ur word is:" + theWord1 + " - " + theWord2;

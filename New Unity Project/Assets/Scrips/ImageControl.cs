@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ImageControl : MonoBehaviour
 {
+    public List<Sprite> sprites = new List<Sprite>();
+
+    
+
     public Sprite image1;
     public Sprite image2;
     public Sprite image3;
@@ -13,7 +17,6 @@ public class ImageControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,9 +24,10 @@ public class ImageControl : MonoBehaviour
     {
         if (GameFlow.loadQuestion == "Y")
         {
+            //GetComponent<SpriteRenderer>().sprite = sprites[GameFlow.textPointer];
             if (GameFlow.textPointer == 1)
             {
-                GetComponent<SpriteRenderer>().sprite = image1;
+                GetComponent<SpriteRenderer>().sprite = image1;//sprites[GameFlow.textPointer - 1];
             }
 
             if (GameFlow.textPointer == 2)

@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class GameFlow2 : MonoBehaviour
+{
+    public List<string> questions = new List<string>() { "Purple", "Tan", "Brown", "Green", "White", "Black", "Lime", "Orange", "Pink", "Kill", "Blue", "Fortegreen", "Ligth Blue", "Red", "Report", "shh", "Yellow", "All" };
+    List<string> activeQuestions = new List<string>();
+    private void OnEnable()
+    {
+        
+    }
+    public void Refresh()
+    {
+        
+    }
+}
 public class GameFlow : MonoBehaviour
 {
     public Transform aTestObj;

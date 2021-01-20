@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Clipboard : MonoBehaviour
 {
@@ -9,14 +10,17 @@ public class Clipboard : MonoBehaviour
     public void CopyToClipboard()
     {
         TextEditor textEditor = new TextEditor();
-        textEditor.text = innputField.text;
+        textEditor.text = inputField.text;
         textEditor.SelectAll();
         textEditor.Copy();
     }
 
     public void PasteFromClipboard()
     {
-        TextEditor textEditor 
+        TextEditor textEditor = new TextEditor();
+        textEditor.multiline = true;
+        textEditor.Paste();
+        inputField.text = textEditor.text;
     }
 
 }

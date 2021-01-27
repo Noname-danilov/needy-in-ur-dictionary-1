@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Clipboard : MonoBehaviour
+public class CopyPasteSystem : MonoBehaviour
 {
-    public InputField inputField;
+    public TMP_InputField TMP_InputField;
 
     public void CopyToClipboard()
     {
         TextEditor textEditor = new TextEditor();
-        textEditor.text = inputField.text;
+        textEditor.text = TMP_InputField.text;
         textEditor.SelectAll();
         textEditor.Copy();
     }
@@ -20,7 +21,8 @@ public class Clipboard : MonoBehaviour
         TextEditor textEditor = new TextEditor();
         textEditor.multiline = true;
         textEditor.Paste();
-        inputField.text = textEditor.text;
+        TMP_InputField.text = textEditor.text;
     }
 
 }
+

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class CopyPasteSystem : MonoBehaviour
 {
-    public TMP_InputField TMP_InputField;
+    public TMP_InputField TMP_InputField ;
 
     public void CopyToClipboard()
     {
         TextEditor textEditor = new TextEditor();
-        textEditor.text = TMP_InputField.text;
+        textEditor.text = FindObjectOfType<WordTransfer>().inputField_1.GetComponent<TMP_InputField>().text;
         textEditor.SelectAll();
         textEditor.Copy();
     }
@@ -21,7 +21,7 @@ public class CopyPasteSystem : MonoBehaviour
         TextEditor textEditor = new TextEditor();
         textEditor.multiline = true;
         textEditor.Paste();
-        TMP_InputField.text = textEditor.text;
+        FindObjectOfType<WordTransfer>().inputField_1.GetComponent<TMP_InputField>().text = textEditor.text;
     }
 
 }

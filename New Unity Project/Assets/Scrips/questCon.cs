@@ -19,10 +19,10 @@ public class questCon : MonoBehaviour
 
     void OnMouseDown()
     {
-        gameFlow.isClicked = false;
-        GameFlow.loadQuestion = "Y";
-        GameFlow.cleartext = "Y";
-        GameFlow.askedQuestions += 1;
+        //gameFlow.isClicked = false;
+        //GameFlow.loadQuestion = "Y";
+        //GameFlow.cleartext = "Y";
+        //GameFlow.askedQuestions += 1;
 
     }
 }

@@ -13,7 +13,7 @@ public class ScoreCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMesh>().text = GameFlow.totalScore.ToString();
+        //GetComponent<TextMesh>().text = GameFlow.totalScore.ToString();
         
     }
 }

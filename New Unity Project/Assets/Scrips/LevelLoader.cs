@@ -38,9 +38,16 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start"); //Play animation
+        Debug.Log("Loading Level...");
 
         yield return new WaitForSeconds(transitionTime); //Wait
 
         SceneManager.LoadScene(levelIndex);  //Load scene
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("QUIT!");
+        Application.Quit();
     }
 }

@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 158f4be0953c05641b62e8ae11067a5b, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 180411488}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: FlashCards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -339,22 +339,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 505971090}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 180411488}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: Quiz
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -431,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 6239242035571263956, guid: c76a8ed565276db4e8b48523015ade26,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -217
       objectReference: {fileID: 0}
     - target: {fileID: 6239242035571263956, guid: c76a8ed565276db4e8b48523015ade26,
         type: 3}
@@ -525,6 +513,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76a8ed565276db4e8b48523015ade26, type: 3}
+--- !u!114 &180411488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5977198499764924741, guid: c76a8ed565276db4e8b48523015ade26,
+    type: 3}
+  m_PrefabInstance: {fileID: 180411487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158f4be0953c05641b62e8ae11067a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278482415
 GameObject:
   m_ObjectHideFlags: 0

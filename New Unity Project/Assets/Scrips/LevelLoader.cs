@@ -48,6 +48,16 @@ public class LevelLoader : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("QUIT!");
+        LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        
         Application.Quit();
     }
+
+
+    private void OnApplicationQuit()
+    {
+        //StartCoroutine(LoadLevel(1));
+
+    }
+
 }

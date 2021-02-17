@@ -2,15 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Notifications.Android;
+using UnityEditor;
+using TMPro;
 
-public class Notification : MonoBehaviour
+public class MobileNotificationManager : MonoBehaviour
 {
     private AndroidNotificationChannel defaultNotificationChannel;
     private int identifier;
     private AndroidNotification newNotification;
 
+    public TMP_InputField time_inputfield;
+
+    private System.DateTime today = System.DateTime.Today;
+    private int notif_hour = 12;
+    private int notif_minute = 00;
+    private System.DateTime notification_time;
+
+    public void test_log()
+    {
+        string time = time_inputfield.text;
+        Debug.Log(time);
+        Debug.Log(time.Substring(0, 2));
+        Debug.Log(time.Substring(3, 2));
+
+        notif_hour =int.Parse(time.Substring(0, 2));  
+        notif_minute = int.Parse(time.Substring(3, 2));
+
+        notification_time = today.AddHours(notif_hour);
+        notification_time = notification_time.AddMinutes(notif_minute);
+    }
     private void Start()
     {
+
         defaultNotificationChannel = new AndroidNotificationChannel()
         {
             Id = "default channel",
@@ -24,8 +47,8 @@ public class Notification : MonoBehaviour
         {
             Title = "Test Notification!",
             Text = "This is a test notification!",
-            SmallIcon = "default",
-            LargeIcon = "default",
+            SmallIcon = "app_icon_small",
+            LargeIcon = "app_icon_large",
             FireTime = System.DateTime.Now.AddSeconds(10),
         };
 
@@ -50,7 +73,7 @@ public class Notification : MonoBehaviour
             Debug.Log("was opened with notification!");
         }
 
-    }
+    } 
     private void onApplicationPause(bool pause)
     {
         if (AndroidNotificationCenter.CheckScheduledNotificationStatus(identifier) == NotificationStatus.Scheduled)
@@ -81,11 +104,13 @@ public class Notification : MonoBehaviour
                 Text = "This is a test notification!",
                 SmallIcon = "app_icon_small",
                 LargeIcon = "app_icon_large",
-                FireTime = System.DateTime.Now.AddSeconds(10),
+                FireTime = notification_time,
             };
 
             //Try sending it again
             identifier = AndroidNotificationCenter.SendNotification(notification, "default_channel");
+
+
         }
     }
 }

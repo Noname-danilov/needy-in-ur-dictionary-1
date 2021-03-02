@@ -5,14 +5,10 @@ using UnityEngine;
 
 public class ScoreCon : MonoBehaviour
 {
-    private int sc = 5;
+    string Amount;
 
-
-
-    void Start()
-    {
-        LoadPrefs();
-    }
+    
+    void Start() => LoadPrefs();
 
     private void OnApplicationQuit()
     {
@@ -21,21 +17,16 @@ public class ScoreCon : MonoBehaviour
 
     public void SavePrefs()
     {
-
+        PlayerPrefs.SetString(Amount, ); // (ScoreKey, )
+        PlayerPrefs.Save();
     }
 
     private void LoadPrefs()
     {
-        throw new NotImplementedException();
+        var AmountOfWords = PlayerPrefs.GetString("Score", "default");
+         = AmountOfWords;
+
     }
-
-
-
-
-    public string ToJson()
-    {
-        return JsonUtility.ToJson(obj: Word);
-    }
-
     
+   
 }

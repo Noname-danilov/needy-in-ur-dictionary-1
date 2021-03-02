@@ -28,7 +28,7 @@ public class Button_for_new_word : MonoBehaviour
         wordManager = FindObjectOfType<WordManager>();
 
         wordTransfer.inputField_1 = Instantiate(prefab, brickPosition, Quaternion.Euler(0, 0, 0), canvas.transform);
-        wordTransfer.inputField_2 = Instantiate(prefab, brickPosition - new Vector3(0, 25, 0), Quaternion.Euler(0, 0, 0), canvas.transform);
+        wordTransfer.inputField_2 = Instantiate(prefab, brickPosition - new Vector3(0, 35, 0), Quaternion.Euler(0, 0, 0), canvas.transform);
 
         Word word = wordManager.words[Random.Range(0, wordManager.words.Count)];
 

@@ -1,19 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreCon : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int sc = 5;
+
+
+
     void Start()
     {
-        
+        LoadPrefs();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnApplicationQuit()
     {
-        //GetComponent<TextMesh>().text = GameFlow.totalScore.ToString();
-        
+        SavePrefs();
     }
+
+    public void SavePrefs()
+    {
+
+    }
+
+    private void LoadPrefs()
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(obj: Word);
+    }
+
+    
 }

@@ -5,26 +5,31 @@ using UnityEngine;
 
 public class ScoreCon : MonoBehaviour
 {
-    string Amount;
+    string SaveKey = "ListOfWords";
 
-    
-    void Start() => LoadPrefs();
 
-    private void OnApplicationQuit()
+    void Start()
+    {
+        LoadPrefs();
+    }
+
+    void OnApplicationQuit()
     {
         SavePrefs();
     }
 
     public void SavePrefs()
     {
-        PlayerPrefs.SetString(Amount, ); // (ScoreKey, )
+        PlayerPrefs.SetString(SaveKey, FindObjectOfType<SaveData>().ToJson()); // (ScoreKey, )
         PlayerPrefs.Save();
     }
 
     private void LoadPrefs()
     {
-        var AmountOfWords = PlayerPrefs.GetString("Score", "default");
-         = AmountOfWords;
+        string JsonData = PlayerPrefs.GetString(SaveKey, "No Saved Data");
+        Debug.Log($"Loaded Data: {JsonData}");
+        FindObjectOfType<SaveData>().LoadFromJson(JsonData);
+        Debug.Log($"Data Sucsessfully Loaded");
 
     }
     

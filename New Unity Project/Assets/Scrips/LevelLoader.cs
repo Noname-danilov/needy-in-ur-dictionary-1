@@ -35,6 +35,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(4));
     }
 
+    /// <summary>
+    /// Какой-то тупой метод
+    /// </summary>
+    /// <param name="levelIndex">"Это индекс уровня (сцены)</param>
+    /// <returns></returns>
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start"); //Play animation

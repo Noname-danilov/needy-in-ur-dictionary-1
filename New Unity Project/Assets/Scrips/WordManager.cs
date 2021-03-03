@@ -11,6 +11,7 @@ public struct Word
     public string native_word;// russian
 
 }
+[Serializable]
 public class WordManager : MonoBehaviour
 {
 

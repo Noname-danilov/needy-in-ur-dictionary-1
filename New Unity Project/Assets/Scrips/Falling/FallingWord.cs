@@ -36,7 +36,7 @@ public class FallingWord
 		bool wordTyped = (typeIndex >= word.Length);
 		if (wordTyped)
 		{
-			display.RemoveWord();
+			display.RemoveWord(); // Remove word on the screen
 		}
 		return wordTyped;
 	}

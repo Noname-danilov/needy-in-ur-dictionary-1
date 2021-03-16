@@ -27,8 +27,8 @@ public class FallingWord
 
 	public void TypeLetter()
 	{
-		typeIndex++; // Remove letter on the screen
-		display.RemoveLetter();
+		typeIndex++;
+		display.RemoveLetter();  // Remove letter on the screen
 	}
 
 	public bool WordTyped()

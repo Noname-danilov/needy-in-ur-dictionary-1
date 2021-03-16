@@ -11,9 +11,17 @@ public class WordManagerFalling : MonoBehaviour
 	private bool hasActiveWord;
 	private FallingWord activeWord;
 
+	//public void Start()
+    //{
+	//	AddWord();
+	//	AddWord();
+	//	AddWord();
+	//}
+
 	public void AddWord()
 	{
-		FallingWord word = new FallingWord(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+		//FallingWord word = new FallingWord(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+		FallingWord word = new FallingWord(FindObjectOfType<WordManager>().words[Random.Range(0, FindObjectOfType<WordManager>().words.Count)].foreign_word, wordSpawner.SpawnWord());
 		Debug.Log(word.word);
 
 		words.Add(word);

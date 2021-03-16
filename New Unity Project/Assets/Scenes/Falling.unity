@@ -218,6 +218,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordManager: {fileID: 728810391}
   wordDelay: 1.5
+--- !u!1 &1000680233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000680237}
+  - component: {fileID: 1000680236}
+  - component: {fileID: 1000680235}
+  - component: {fileID: 1000680234}
+  m_Layer: 0
+  m_Name: WordManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1000680234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000680233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9142acf5cd95f4a977ba842ccb88b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1000680235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000680233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39276089898815429309c97756d6261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1000680236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000680233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744bdbf5a44458b4482523b79fd45fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random_word:
+    foreign_word: 
+    native_word: 
+  words:
+  - foreign_word: blue
+    native_word: "\u0441\u0438\u043D\u0438\u0439"
+  - foreign_word: orange
+    native_word: "\u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0439"
+  - foreign_word: black
+    native_word: "\u0447\u0451\u0440\u043D\u044B\u0439"
+--- !u!4 &1000680237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000680233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 228.68158, y: 250.31912, z: -106.3996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296342237
 GameObject:
   m_ObjectHideFlags: 0

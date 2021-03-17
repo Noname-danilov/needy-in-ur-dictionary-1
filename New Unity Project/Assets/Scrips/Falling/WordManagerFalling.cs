@@ -21,7 +21,9 @@ public class WordManagerFalling : MonoBehaviour
 	public void AddWord()
 	{
 		//FallingWord word = new FallingWord(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
-		FallingWord word = new FallingWord(FindObjectOfType<WordManager>().words[Random.Range(0, FindObjectOfType<WordManager>().words.Count)].foreign_word, wordSpawner.SpawnWord());
+		List<Word> my_little_words = FindObjectOfType<WordManager>().words;
+		string random_foreign_word = my_little_words[Random.Range(0, my_little_words.Count)].foreign_word;
+		FallingWord word = new FallingWord(random_foreign_word, wordSpawner.SpawnWord());
 		Debug.Log(word.word);
 
 		words.Add(word);

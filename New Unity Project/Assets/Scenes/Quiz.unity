@@ -1127,7 +1127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.4, y: -31.9}
+  m_AnchoredPosition: {x: 80, y: -10}
   m_SizeDelta: {x: 160, y: 45.5916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &739798052
@@ -1455,7 +1455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &872605194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1725,12 +1725,12 @@ GameObject:
   - component: {fileID: 929192804}
   - component: {fileID: 929192803}
   m_Layer: 5
-  m_Name: GameOverMenu
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &929192802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1798,50 +1798,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 997643013}
-  - component: {fileID: 997643012}
   m_Layer: 5
   m_Name: GameMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &997643012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997643011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 630e60e50746b754d9661721cdb60686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quizManager: {fileID: 1206360842}
-  categoryBtnPrefab: {fileID: 0}
-  scrollHolder: {fileID: 0}
-  scoreText: {fileID: 757416859}
-  timerText: {fileID: 1317425422}
-  lifeImageList:
-  - {fileID: 410278853}
-  - {fileID: 275756676}
-  - {fileID: 909830823}
-  gameOverPanel: {fileID: 0}
-  mainMenu: {fileID: 872605193}
-  gamePanel: {fileID: 997643011}
-  correctCol: {r: 0, g: 1, b: 0.06293082, a: 0}
-  wrongCol: {r: 1, g: 0, b: 0, a: 0}
-  normalCol: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 0}
-  questionImg: {fileID: 2104454150}
-  questionVideo: {fileID: 759705843}
-  questionAudio: {fileID: 2064173504}
-  questionInfoText: {fileID: 739798053}
-  options:
-  - {fileID: 1711385107}
-  - {fileID: 1578511026}
-  - {fileID: 899132521}
-  - {fileID: 1784321738}
+  m_IsActive: 0
 --- !u!224 &997643013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1974,9 +1937,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743955a862c5b3641bfb2c7e8b151e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizGameUI: {fileID: 997643012}
-  quizDataList: []
-  timeInSeconds: 0
+  quizGameUI: {fileID: 1660799698}
+  quizDataList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeInSeconds: 30
 --- !u!4 &1206360843
 Transform:
   m_ObjectHideFlags: 0
@@ -2372,7 +2338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548251736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -88.64819, y: 174, z: 116.869385}
+  m_LocalPosition: {x: -5, y: 174, z: 116.869385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 739798051}
@@ -2621,6 +2587,73 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1660799697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660799699}
+  - component: {fileID: 1660799698}
+  m_Layer: 0
+  m_Name: QuizUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1660799698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630e60e50746b754d9661721cdb60686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizManager: {fileID: 1206360842}
+  categoryBtnPrefab: {fileID: 0}
+  scrollHolder: {fileID: 0}
+  scoreText: {fileID: 757416859}
+  timerText: {fileID: 1317425422}
+  lifeImageList:
+  - {fileID: 410278853}
+  - {fileID: 275756676}
+  - {fileID: 909830823}
+  gameOverPanel: {fileID: 929192801}
+  mainMenu: {fileID: 872605193}
+  gamePanel: {fileID: 997643011}
+  correctCol: {r: 0, g: 1, b: 0.06293082, a: 0}
+  wrongCol: {r: 1, g: 0, b: 0, a: 0}
+  normalCol: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 0}
+  questionImg: {fileID: 2104454150}
+  questionVideo: {fileID: 759705843}
+  questionAudio: {fileID: 2064173504}
+  questionInfoText: {fileID: 739798053}
+  options:
+  - {fileID: 1711385107}
+  - {fileID: 1578511026}
+  - {fileID: 899132521}
+  - {fileID: 1784321738}
+--- !u!4 &1660799699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705151210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,7 +3338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1890629996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1660799698}
+        m_TargetAssemblyTypeName: QuizGameUI, Assembly-CSharp
+        m_MethodName: RestryButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890629996
 MonoBehaviour:
   m_ObjectHideFlags: 0

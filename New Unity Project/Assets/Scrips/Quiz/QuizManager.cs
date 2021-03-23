@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class QuizManager : MonoBehaviour
 {
-#pragma warning disable 649
+
     //ref to the QuizGameUI script
     [SerializeField] private QuizGameUI quizGameUI;
     //ref to the scriptableobject file
     [SerializeField] private List<QuizDataScriptable> quizDataList;
     [SerializeField] private float timeInSeconds;
-#pragma warning restore 649
+
 
     private string currentCategory = "";
     private int correctAnswerCount = 0;

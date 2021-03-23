@@ -27,6 +27,11 @@ public class QuizGameUI : MonoBehaviour
 
     public Text TimerText { get => timerText; }                     //getter
     public Text ScoreText { get => scoreText; }                     //getter
+
+    //public Text get()
+    //{
+    //    return scoreText;
+    //}
     public GameObject GameOverPanel { get => gameOverPanel; }                     //getter
 
     private void Start()

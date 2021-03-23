@@ -1,96 +1,172 @@
-﻿//using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System.Linq;
 
 public class QuizManager : MonoBehaviour
-{    
-    public TMP_Text question;
-    public TMP_Text response;
-    public Button button_true;
-    public Button button_false;
-    public TMP_InputField writing_answer;
-    public Toggle toggle;
+{
+#pragma warning disable 649
+    //ref to the QuizGameUI script
+    [SerializeField] private QuizGameUI quizGameUI;
+    //ref to the scriptableobject file
+    [SerializeField] private List<QuizDataScriptable> quizDataList;
+    [SerializeField] private float timeInSeconds;
+#pragma warning restore 649
 
+    private string currentCategory = "";
+    private int correctAnswerCount = 0;
+    //questions data
+    private List<Question> questions;
+    //current question data
+    private Question selectedQuetion = new Question();
+    private int gameScore;
+    private int lifesRemaining;
+    private float currentTime;
+    private QuizDataScriptable dataScriptable;
 
+    private GameStatus gameStatus = GameStatus.NEXT;
 
-    //Unity doesn't know how to serialize a Dictionary
-    public Dictionary<string, Button> questions = new Dictionary<string, Button>();
-    public Dictionary<string, string> input_field_questions = new Dictionary<string, string>();
+    public GameStatus GameStatus { get { return gameStatus; } }
 
-    // Start is called before the first frame update
-    void Start()
+    public List<QuizDataScriptable> QuizData { get => quizDataList; }
+
+    public void StartGame(int categoryIndex, string category)
     {
-        int choice = Random.Range(0, 2);
-        if (choice == 0)
-        {
-            questions.Add("Почему?", button_true);
-        }
-        else
-        {
-            questions.Add("Почему?", button_false);
-        }        
-        questions.Add("7 + 3", button_false);  // 7 + 3 = false && 7+2 =true
-        questions.Add("Сколько у тебя хромосом?", button_true);
-
-        input_field_questions.Add("Да?", "☺");
-
-
-        question.text = questions.Keys.First();
+        currentCategory = category;
+        correctAnswerCount = 0;
+        gameScore = 0;
+        lifesRemaining = 3;
+        currentTime = timeInSeconds;
+        //set the questions data
+        questions = new List<Question>();
+        dataScriptable = quizDataList[categoryIndex];
+        questions.AddRange(dataScriptable.questions);
+        //select the question
+        SelectQuestion();
+        gameStatus = GameStatus.PLAYING;
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Method used to randomly select the question form questions data
+    /// </summary>
+    private void SelectQuestion()
     {
-        if (questions.Count == 0)
+        //get the random number
+        int val = UnityEngine.Random.Range(0, questions.Count);
+        //set the selectedQuetion
+        selectedQuetion = questions[val];
+        //send the question to quizGameUI
+        quizGameUI.SetQuestion(selectedQuetion);
+
+        questions.RemoveAt(val);
+    }
+
+    private void Update()
+    {
+        if (gameStatus == GameStatus.PLAYING)
         {
-            button_true.enabled = false;
-            button_false.enabled = false;
-            question.text = "Вопросы закончились!";
+            currentTime -= Time.deltaTime;
+            SetTime(currentTime);
+        }
+    }
+
+    void SetTime(float value)
+    {
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);                       //set the time value
+        quizGameUI.TimerText.text = time.ToString("mm':'ss");   //convert time to Time format
+
+        if (currentTime <= 0)
+        {
+            //Game Over
+            GameEnd();
+        }
+    }
+
+    /// <summary>
+    /// Method called to check the answer is correct or not
+    /// </summary>
+    /// <param name="selectedOption">answer string</param>
+    /// <returns></returns>
+    public bool Answer(string selectedOption)
+    {
+        //set default to false
+        bool correct = false;
+        //if selected answer is similar to the correctAns
+        if (selectedQuetion.correctAns == selectedOption)
+        {
+            //Yes, Ans is correct
+            correctAnswerCount++;
+            correct = true;
+            gameScore += 50;
+            quizGameUI.ScoreText.text = "Score:" + gameScore;
         }
         else
         {
-            if (toggle.isOn)
+            //No, Ans is wrong
+            //Reduce Life
+            lifesRemaining--;
+            quizGameUI.ReduceLife(lifesRemaining);
+
+            if (lifesRemaining == 0)
             {
-                question.text = input_field_questions.Keys.First();
+                GameEnd();
+            }
+        }
+
+        if (gameStatus == GameStatus.PLAYING)
+        {
+            if (questions.Count > 0)
+            {
+                //call SelectQuestion method again after 1s
+                Invoke("SelectQuestion", 0.4f);
             }
             else
             {
-                question.text = questions.Keys.First();
-
+                GameEnd();
             }
         }
-        
+        //return the value of correct bool
+        return correct;
     }
 
-
-    public void CompareAnswers(Button button)
+    private void GameEnd()
     {
-        if (questions[question.text] == button)
-        {
-            response.text = "Krasavchik";
-            questions.Remove(question.text);
-        }
-        else
-        {
-            response.text = "ur are have stup1d";
-        }
-    }
+        gameStatus = GameStatus.NEXT;
+        quizGameUI.GameOverPanel.SetActive(true);
 
-    public void TextRewritten()
-    {
-        if (writing_answer.text == input_field_questions[question.text])
-        {
-            response.text = "KrasaUvchik";
-        }
-        
-        else
-        {
-            response.text = "u r gay";
-        }
+        //fi you want to save only the highest score then compare the current score with saved score and if more save the new score
+        //eg:- if correctAnswerCount > PlayerPrefs.GetInt(currentCategory) then call below line
+
+        //Save the score
+        PlayerPrefs.SetInt(currentCategory, correctAnswerCount); //save the score for this category
     }
-    
+}
+
+//Datastructure for storeing the quetions data
+[System.Serializable]
+public class Question
+{
+    public string questionInfo;         //question text
+    public QuestionType questionType;   //type
+    public Sprite questionImage;        //image for Image Type
+    public AudioClip audioClip;         //audio for audio type
+    public UnityEngine.Video.VideoClip videoClip;   //video for video type
+    public List<string> options;        //options to select
+    public string correctAns;           //correct option
+}
+
+[System.Serializable]
+public enum QuestionType
+{
+    TEXT,
+    IMAGE,
+    AUDIO,
+    VIDEO
+}
+
+[SerializeField]
+public enum GameStatus
+{
+    PLAYING,
+    NEXT
 }

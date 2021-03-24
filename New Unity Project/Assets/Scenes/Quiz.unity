@@ -1939,9 +1939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizGameUI: {fileID: 1660799698}
   quizDataList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4968ea6a401e70d42bcb0b6a096a406a, type: 2}
+  - {fileID: 11400000, guid: f9515f3debbcb2549afc64e000f69858, type: 2}
+  - {fileID: 11400000, guid: d5565b88140b24648bde2bc1f2601216, type: 2}
   timeInSeconds: 30
 --- !u!4 &1206360843
 Transform:
@@ -2597,6 +2597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660799699}
   - component: {fileID: 1660799698}
+  - component: {fileID: 1660799700}
   m_Layer: 0
   m_Name: QuizUIManager
   m_TagString: Untagged
@@ -2654,6 +2655,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660799700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31436255f53e8144b9d72f80cf4e6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryTitleText: {fileID: 0}
+  scoreText: {fileID: 0}
+  btn: {fileID: 0}
 --- !u!1 &1705151210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,7 +2704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1254965, y: 0.754}
   m_AnchorMax: {x: 0.85700005, y: 0.9760001}
-  m_AnchoredPosition: {x: 0.5690994, y: -0.146698}
+  m_AnchoredPosition: {x: 0.56910706, y: -0.146698}
   m_SizeDelta: {x: -0.43989563, y: 1.4561996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705151212

@@ -27,11 +27,6 @@ public class QuizGameUI : MonoBehaviour
 
     public Text TimerText { get => timerText; }                     //getter
     public Text ScoreText { get => scoreText; }                     //getter
-
-    //public Text get()
-    //{
-    //    return scoreText;
-    //}
     public GameObject GameOverPanel { get => gameOverPanel; }                     //getter
 
     private void Start()
@@ -73,7 +68,7 @@ public class QuizGameUI : MonoBehaviour
                 questionVideo.transform.gameObject.SetActive(false);        //deactivate questionVideo
                 questionImg.transform.gameObject.SetActive(false);          //deactivate questionImg
                 questionAudio.transform.gameObject.SetActive(true);         //activate questionAudio
-                
+
                 audioLength = question.audioClip.length;                    //set audio clip
                 StartCoroutine(PlayAudio());                                //start Coroutine
                 break;
@@ -102,7 +97,7 @@ public class QuizGameUI : MonoBehaviour
             options[i].image.color = normalCol; //set color of button to normal
         }
 
-        answered = false;                       
+        answered = false;
 
     }
 
@@ -173,9 +168,11 @@ public class QuizGameUI : MonoBehaviour
     /// </summary>
     void CreateCategoryButtons()
     {
+        print("Debug 1");
         //we loop through all the available catgories in our QuizManager
         for (int i = 0; i < quizManager.QuizData.Count; i++)
         {
+            print("Debug 2");
             //Create new CategoryBtn
             CategoryBtnScript categoryBtn = Instantiate(categoryBtnPrefab, scrollHolder.transform);
             //Set the button default values
@@ -189,6 +186,7 @@ public class QuizGameUI : MonoBehaviour
     //Method called by Category Button
     private void CategoryBtn(int index, string category)
     {
+        print("Debug 3");
         quizManager.StartGame(index, category); //start the game
         mainMenu.SetActive(false);              //deactivate mainMenu
         gamePanel.SetActive(true);              //activate game panel

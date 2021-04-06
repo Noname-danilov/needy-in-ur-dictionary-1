@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 10}
+  m_AnchoredPosition: {x: -84.5, y: 10.45}
   m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122483156
@@ -2079,10 +2079,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1807465039}
   - {fileID: 1548251737}
   - {fileID: 1379562477}
   - {fileID: 2031204129}
-  - {fileID: 1807465039}
   - {fileID: 929192802}
   m_Father: {fileID: 1817207577}
   m_RootOrder: 1
@@ -2251,12 +2251,12 @@ RectTransform:
   - {fileID: 759705840}
   - {fileID: 2064173501}
   m_Father: {fileID: 997643013}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 91.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 12.281, y: 103.3812}
+  m_SizeDelta: {x: 124.56, y: 124.5624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1429491713
 GameObject:
@@ -2448,7 +2448,7 @@ Transform:
   m_Children:
   - {fileID: 739798051}
   m_Father: {fileID: 997643013}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1578511022
 GameObject:
@@ -2651,7 +2651,7 @@ GameObject:
   - component: {fileID: 1705151213}
   - component: {fileID: 1705151212}
   m_Layer: 5
-  m_Name: TitleText
+  m_Name: Quiz Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2709,7 +2709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quiz Tutorial
+  m_Text: 'Quiz '
 --- !u!222 &1705151213
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3236,7 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807465039}
   m_Layer: 5
-  m_Name: TopBar
+  m_Name: TopHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,7 +3257,7 @@ RectTransform:
   - {fileID: 275776641}
   - {fileID: 1515076276}
   m_Father: {fileID: 997643013}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.86}
   m_AnchorMax: {x: 1, y: 1}
@@ -3795,6 +3795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031204129}
+  - component: {fileID: 2031204130}
   m_Layer: 5
   m_Name: OptionHolder
   m_TagString: Untagged
@@ -3818,13 +3819,39 @@ RectTransform:
   - {fileID: 899132518}
   - {fileID: 1784321741}
   m_Father: {fileID: 997643013}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20949651, y: 0.040000003}
   m_AnchorMax: {x: 0.794, y: 0.36200002}
   m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: 0.6717987, y: -0.27189636}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2031204130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031204128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 15
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &2064173500
 GameObject:
   m_ObjectHideFlags: 0

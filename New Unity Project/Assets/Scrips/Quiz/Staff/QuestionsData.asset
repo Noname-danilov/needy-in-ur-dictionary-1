@@ -50,17 +50,6 @@ MonoBehaviour:
   - questionInfo: Quess the animal?
     questionType: 2
     questionImage: {fileID: 0}
-    audioClip: {fileID: 8300000, guid: 6786f502de8799a44a7de24f1bb34e0b, type: 3}
-    videoClip: {fileID: 0}
-    options:
-    - Kangaroo
-    - Wolf
-    - Dolphine
-    - Frog
-    correctAns: Wolf
-  - questionInfo: Quess the animal?
-    questionType: 2
-    questionImage: {fileID: 0}
     audioClip: {fileID: 8300000, guid: 1a24f4d19ff35ce44b6d5f53fe849187, type: 3}
     videoClip: {fileID: 0}
     options:

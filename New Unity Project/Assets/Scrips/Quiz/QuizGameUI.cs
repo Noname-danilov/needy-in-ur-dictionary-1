@@ -168,11 +168,9 @@ public class QuizGameUI : MonoBehaviour
     /// </summary>
     void CreateCategoryButtons()
     {
-        print("Debug 1");
         //we loop through all the available catgories in our QuizManager
         for (int i = 0; i < quizManager.QuizData.Count; i++)
         {
-            print("Debug 2");
             //Create new CategoryBtn
             CategoryBtnScript categoryBtn = Instantiate(categoryBtnPrefab, scrollHolder.transform);
             //Set the button default values
@@ -186,7 +184,6 @@ public class QuizGameUI : MonoBehaviour
     //Method called by Category Button
     private void CategoryBtn(int index, string category)
     {
-        print("Debug 3");
         quizManager.StartGame(index, category); //start the game
         mainMenu.SetActive(false);              //deactivate mainMenu
         gamePanel.SetActive(true);              //activate game panel

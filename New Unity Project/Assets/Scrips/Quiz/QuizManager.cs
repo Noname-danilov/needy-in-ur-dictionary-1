@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class QuizManager : MonoBehaviour
 {
-
+#pragma warning disable 649
     //ref to the QuizGameUI script
     [SerializeField] private QuizGameUI quizGameUI;
     //ref to the scriptableobject file
     [SerializeField] private List<QuizDataScriptable> quizDataList;
     [SerializeField] private float timeInSeconds;
-
+#pragma warning restore 649
 
     private string currentCategory = "";
     private int correctAnswerCount = 0;
@@ -150,7 +150,7 @@ public class Question
     public QuestionType questionType;   //type
     public Sprite questionImage;        //image for Image Type
     public AudioClip audioClip;         //audio for audio type
-    public UnityEngine.Video.VideoClip videoClip;   //video for video type
+    public UnityEngine.Video.VideoClip videoClip;   //video for video typ   e
     public List<string> options;        //options to select
     public string correctAns;           //correct option
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class QuizManager : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class QuizManager : MonoBehaviour
     //ref to the scriptableobject file
     [SerializeField] private List<QuizDataScriptable> quizDataList;
     [SerializeField] private float timeInSeconds;
+    
 #pragma warning restore 649
-
+    
     private string currentCategory = "";
     private int correctAnswerCount = 0;
     //questions data
@@ -31,7 +33,7 @@ public class QuizManager : MonoBehaviour
     public List<QuizDataScriptable> QuizData { get => quizDataList; }
 
     public void StartGame(int categoryIndex, string category)
-    {
+    {        
         currentCategory = category;
         correctAnswerCount = 0;
         gameScore = 0;
@@ -52,7 +54,7 @@ public class QuizManager : MonoBehaviour
     private void SelectQuestion()
     {
         //get the random number
-        int val = UnityEngine.Random.Range(0, questions.Count);
+        int val = Random.Range(0, questions.Count);
         //set the selectedQuetion
         selectedQuetion = questions[val];
         //send the question to quizGameUI
@@ -90,7 +92,8 @@ public class QuizManager : MonoBehaviour
     public bool Answer(string selectedOption)
     {
         //set default to false
-        bool correct = false;
+        bool correct;
+      
         //if selected answer is similar to the correctAns
         if (selectedQuetion.correctAns == selectedOption)
         {
@@ -102,6 +105,7 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
+            correct = false;
             //No, Ans is wrong
             //Reduce Life
             lifesRemaining--;
@@ -150,7 +154,7 @@ public class Question
     public QuestionType questionType;   //type
     public Sprite questionImage;        //image for Image Type
     public AudioClip audioClip;         //audio for audio type
-    public UnityEngine.Video.VideoClip videoClip;   //video for video typ   e
+    public UnityEngine.Video.VideoClip videoClip;   //video for video type
     public List<string> options;        //options to select
     public string correctAns;           //correct option
 }

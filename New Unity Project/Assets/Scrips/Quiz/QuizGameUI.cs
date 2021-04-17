@@ -37,7 +37,7 @@ public class QuizGameUI : MonoBehaviour
             Button localBtn = options[i];
             localBtn.onClick.AddListener(() => OnClick(localBtn));
         }
-
+        
         CreateCategoryButtons();
 
     }
@@ -118,7 +118,7 @@ public class QuizGameUI : MonoBehaviour
             //PlayOneShot
             questionAudio.PlayOneShot(question.audioClip);
             //wait for few seconds
-            yield return new WaitForSeconds(audioLength + 0.5f);
+            yield return new WaitForSeconds(audioLength + 1f);
             //play again
             StartCoroutine(PlayAudio());
         }

@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: abd596dffc09b5a4eba13d11c19780a3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Quiz.unity
-    guid: c9ccc249a41e91f498bbaa66a219359b
+    path: Assets/Scenes/SetReminder.unity
+    guid: 1b52f1d9685021a49b414a3e37f92ab5
   m_configObjects: {}

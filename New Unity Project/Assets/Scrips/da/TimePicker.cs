@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using pingak9;
+//using pingak9;
+using FantomLib;
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+    AndroidPlugin.ShowTimePickerDialog(defaultTime, resultTimeFormat, callbackGameObject, callbackMethod, style);
+#endif
 
 public class TimePicker : MonoBehaviour
 {

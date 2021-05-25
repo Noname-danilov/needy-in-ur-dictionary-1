@@ -336,20 +336,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8705443376855271396, guid: 53163bc48f283464699d6d5a0cecdf3f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705443376855271396, guid: 53163bc48f283464699d6d5a0cecdf3f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53163bc48f283464699d6d5a0cecdf3f, type: 3}
---- !u!1 &347555017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5086843728213578719, guid: 53163bc48f283464699d6d5a0cecdf3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 347555016}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &347555018 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 38330662612720847, guid: 53163bc48f283464699d6d5a0cecdf3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 347555016}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &387681122
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1613930438730899131, guid: 53163bc48f283464699d6d5a0cecdf3f, type: 3}
   canvas: {fileID: 1817207573}
+  inst1: {fileID: 0}
+  inst2: {fileID: 0}
+  button_1: {fileID: 0}
 --- !u!114 &696931742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,8 +661,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1a7d37c5525a04c980edc8ab9a73c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theWord: 
-  inputField: {fileID: 347555017}
+  theWord1: 
+  theWord2: 
+  inputField_1: {fileID: 0}
+  inputField_2: {fileID: 0}
   textDisplay: {fileID: 1876387877}
 --- !u!4 &869124447
 Transform:
@@ -1064,7 +1067,7 @@ RectTransform:
   - {fileID: 1896086299}
   - {fileID: 696931740}
   - {fileID: 1876387880}
-  - {fileID: 347555018}
+  - {fileID: 2068221690}
   - {fileID: 1034785202}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1228,3 +1231,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896086298}
   m_CullTransparentMesh: 0
+--- !u!224 &2068221690 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8705443376855271396, guid: 53163bc48f283464699d6d5a0cecdf3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 347555016}
+  m_PrefabAsset: {fileID: 0}

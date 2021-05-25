@@ -6,7 +6,7 @@ public class Button_for_new_word : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject canvas;
-    Vector3 brickPosition = new Vector3(250, 700, 0);
+    Vector3 brickPosition = new Vector3(250, 700, -10);
     public GameObject inst1;
     public GameObject inst2;
     public GameObject button_1;

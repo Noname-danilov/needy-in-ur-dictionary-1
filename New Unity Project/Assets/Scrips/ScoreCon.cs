@@ -1,19 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreCon : MonoBehaviour
 {
-    // Start is called before the first frame update
+    string SaveKey = "ListOfWords";
+
+
     void Start()
     {
-        
+        LoadPrefs();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnApplicationQuit()
     {
-        GetComponent<TextMesh>().text = GameFlow.totalScore.ToString();
-        
+        SavePrefs();
     }
+
+    public void SavePrefs()
+    {
+        PlayerPrefs.SetString(SaveKey, FindObjectOfType<SaveData>().ToJson()); // (ScoreKey, )
+        PlayerPrefs.Save();
+    }
+
+    private void LoadPrefs()
+    {
+        string JsonData = PlayerPrefs.GetString(SaveKey, "No Saved Data");
+        Debug.Log($"Loaded Data: {JsonData}");
+        FindObjectOfType<SaveData>().LoadFromJson(JsonData);
+        Debug.Log($"Data Sucsessfully Loaded");
+
+    }
+    
+   
 }

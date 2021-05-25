@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class questCon : MonoBehaviour
 {
+    public GameFlow gameFlow;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +19,10 @@ public class questCon : MonoBehaviour
 
     void OnMouseDown()
     {
-
-        GameFlow.loadQuestion = "Y";
-        GameFlow.cleartext = "Y";
-        GameFlow.askedQuestions += 1;
+        //gameFlow.isClicked = false;
+        //GameFlow.loadQuestion = "Y";
+        //GameFlow.cleartext = "Y";
+        //GameFlow.askedQuestions += 1;
 
     }
 }

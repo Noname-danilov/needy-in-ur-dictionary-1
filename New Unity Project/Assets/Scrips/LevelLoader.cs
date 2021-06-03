@@ -17,22 +17,22 @@ public class LevelLoader : MonoBehaviour
 
     public void AddingNewWord()
     {
-        StartCoroutine(LoadLevel(1));
+        StartCoroutine(LoadLevel(2));
     }
 
     public void ModeSelection()
     {
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LoadLevel(3));
     }
 
     public void FlashCards()
     {
-        StartCoroutine(LoadLevel(3));
+        StartCoroutine(LoadLevel(4));
     }
 
     public void Quiz()
     {
-        StartCoroutine(LoadLevel(4));
+        StartCoroutine(LoadLevel(5));
     }
 
     /// <summary>

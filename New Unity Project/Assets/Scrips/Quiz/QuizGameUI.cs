@@ -8,8 +8,6 @@ public class QuizGameUI : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private QuizManager quizManager;               //ref to the QuizManager script
-    [SerializeField] private CategoryBtnScript categoryBtnPrefab;
-    [SerializeField] private GameObject scrollHolder;
     [SerializeField] private Text scoreText, timerText;
     [SerializeField] private List<Image> lifeImageList;
     [SerializeField] private GameObject gameOverPanel, mainMenu, gamePanel;
@@ -19,6 +17,7 @@ public class QuizGameUI : MonoBehaviour
     [SerializeField] private AudioSource questionAudio;             //audio source for audio clip
     [SerializeField] private Text questionInfoText;                 //text to show question
     [SerializeField] private List<Button> options;                  //options button reference
+    [SerializeField] private List<Button> uiButtons;
 #pragma warning restore 649
 
     private float audioLength;          //store audio length
@@ -30,15 +29,18 @@ public class QuizGameUI : MonoBehaviour
     public GameObject GameOverPanel { get => gameOverPanel; }                     //getter
 
     private void Start()
-    {
-        //add the listner to all the buttons
+    {   //add the listner to all the buttons
         for (int i = 0; i < options.Count; i++)
         {
             Button localBtn = options[i];
             localBtn.onClick.AddListener(() => OnClick(localBtn));
         }
-        
-        CreateCategoryButtons();
+
+        for (int i = 0; i < uiButtons.Count; i++)
+        {
+            Button localBtn = uiButtons[i];
+            localBtn.onClick.AddListener(() => OnClick(localBtn));
+        }
 
     }
     /// <summary>
@@ -82,8 +84,8 @@ public class QuizGameUI : MonoBehaviour
                 questionVideo.Play();                                       //play video
                 break;
         }
-
-        questionInfoText.text = question.questionInfo;                      //set the question text
+        //// Random word (foreign/native)...
+        questionInfoText.text = question.questionInfo;                      //set the question text 
 
         //suffle the list of options
         List<string> ansOptions = ShuffleList.ShuffleListItems<string>(question.options);
@@ -118,7 +120,7 @@ public class QuizGameUI : MonoBehaviour
             //PlayOneShot
             questionAudio.PlayOneShot(question.audioClip);
             //wait for few seconds
-            yield return new WaitForSeconds(audioLength + 1f);
+            yield return new WaitForSeconds(audioLength + 0.5f);
             //play again
             StartCoroutine(PlayAudio());
         }
@@ -151,8 +153,7 @@ public class QuizGameUI : MonoBehaviour
                 if (val)
                 {
                     //set color to correct
-                    //btn.image.color = correctCol;
-                    StartCoroutine(BlinkImg(btn.image));
+                    btn.image.color = correctCol;
                 }
                 else
                 {
@@ -161,47 +162,28 @@ public class QuizGameUI : MonoBehaviour
                 }
             }
         }
-    }
 
-    /// <summary>
-    /// Method to create Category Buttons dynamically
-    /// </summary>
-    void CreateCategoryButtons()
-    {
-        //we loop through all the available catgories in our QuizManager
-        for (int i = 0; i < quizManager.QuizData.Count; i++)
+        switch (btn.name)
         {
-            //Create new CategoryBtn
-            CategoryBtnScript categoryBtn = Instantiate(categoryBtnPrefab, scrollHolder.transform);
-            //Set the button default values
-            categoryBtn.SetButton(quizManager.QuizData[i].categoryName, quizManager.QuizData[i].questions.Count);
-            int index = i;
-            //Add listner to button which calls CategoryBtn method
-            categoryBtn.Btn.onClick.AddListener(() => CategoryBtn(index, quizManager.QuizData[index].categoryName));
+            case "word - translation (and vice versa)":
+                quizManager.StartGame(0);
+                mainMenu.SetActive(false);
+                gamePanel.SetActive(true);
+                break;
+            case "Bird":
+                quizManager.StartGame(1);
+                mainMenu.SetActive(false);
+                gamePanel.SetActive(true);
+                break;
+            case "Mix":
+                quizManager.StartGame(2);
+                mainMenu.SetActive(false);
+                gamePanel.SetActive(true);
+                break;
         }
     }
 
-    //Method called by Category Button
-    private void CategoryBtn(int index, string category)
-    {
-        quizManager.StartGame(index, category); //start the game
-        mainMenu.SetActive(false);              //deactivate mainMenu
-        gamePanel.SetActive(true);              //activate game panel
-    }
-
-    //this give blink effect [if needed use or dont use]
-    IEnumerator BlinkImg(Image img)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            img.color = Color.white;
-            yield return new WaitForSeconds(0.1f);
-            img.color = correctCol;
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
-    public void RestryButton()
+    public void RetryButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

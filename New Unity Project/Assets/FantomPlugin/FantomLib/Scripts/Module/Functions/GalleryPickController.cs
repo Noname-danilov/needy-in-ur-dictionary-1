@@ -18,17 +18,7 @@ namespace FantomLib
     ///(*) There is a possibility that width, height and other information can not be acquired depending on the saved state of the media (0 or empty when it can not be acquired).
     ///(*) Sometimes it can not be get correctly depending on the authority (security) or the folder in which it is placed.
     ///(*) Callback from Android to Unity is received under 'GameObject.name'. That is, it is unique within the hierarchy. 
-    ///
-    /// 
-    /// デフォルトのギャラリーアプリを開いて、画像・動画ファイル情報（パスと幅・高さ 等）を取得する。
-    ///・アプリが複数ある場合、ランチャーで選択する。
-    ///※API 19 (Android 4.4) 以降推奨。それより前の API Level ではデフォルトのフォルダやコンテンツプロバイダの仕様により、正しくファイル情報が取得できない可能性あり。
-    ///※External Storage（SDカード等）から読み込む場合にはパーミッションが必要（'READ_EXTERNAL_STORAGE' または 'WRITE_EXTERNAL_STORAGE'）。
-    ///※利用するアプリによって返される URI は異なり、取得できる情報が違うので注意
-    ///（"content://media/external/images/media/(ID)" のような書式が一番良い（標準アプリ）。アプリ特有の URI の場合、情報が制限される可能性あり）。
-    ///※メディアの保存状態によっては、幅や高さ、その他の情報が取得できない可能性がある（取得できなかったときは 0 または空になる）。
-    ///※権限（セキュリティ）や配置しているフォルダなどによっても正しく取得できないことがある。
-    ///※Android から Unity へコールバック受信は「GameObject 名」で行われるため、ヒエラルキー上ではユニークにしておく必要がある。
+   
     /// </summary>
     public class GalleryPickController : MonoBehaviour
     {

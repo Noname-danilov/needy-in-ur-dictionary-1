@@ -93,7 +93,7 @@ public class QuizGameUI : MonoBehaviour
         {
             //set the child text
             options[i].GetComponentInChildren<Text>().text = ansOptions[i];
-            options[i].name = ansOptions[i];    //set the name of button
+            options[i].name = ansOptions[i];    //set the name of button / detect which answer is clicked
             options[i].image.color = normalCol; //set color of button to normal
         }
 

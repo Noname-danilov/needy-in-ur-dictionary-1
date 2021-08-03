@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Enable : MonoBehaviour
 {
-    public GameObject gameObject;
-    bool TrueFalse = true;
+    public GameObject gameObject; // Correct_Incorrect
+    bool TrueFalse = true; //Enable?
 
     public void Start()
     {

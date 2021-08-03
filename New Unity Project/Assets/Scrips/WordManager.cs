@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [Serializable]
 public struct Word
 {
-    public string foreign_word;// инглиш
+    public string foreign_word;// пїЅпїЅпїЅпїЅпїЅпїЅ
     public string native_word;// russian
+    public Image ImageToWord;
 
 }
 [Serializable]

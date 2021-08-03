@@ -19,16 +19,7 @@ using FantomLib;
 //(*) When saving a screenshot to External Storage, the following permission is required for 'AndroidManifest.xml'.
 //   '<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />' in 'AndroidManifest.xml'
 //
-//
-// ギャラリーからの画像/動画情報取得のデモ
-//※360度（全天球）のオブジェクトの設定方法は以下を参照して下さい。
-// http://fantom1x.blog130.fc2.com/blog-entry-297.html
-//※全天球のメッシュ「Sphere100.fbx」は以下からダウンロードして下さい。
-// http://warapuri.com/post/131599525953/
-//※このデモでは簡略のため、パフォーマンスは考慮に入れてません（例えば RenderTexture は負荷が高いと思われる）。
-//　VideoPlayer には Material Override など、別の方法もあるので、実際のアプリに使用する場合は、実装方法を変更した方が良いパフォーマンスを得られる場合があります。
-//※スクリーンショットをストレージに保存する場合は、以下のパーミッションが「AndroidManifest.xml」に必要になります。
-//　'<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />' in 'AndroidManifest.xml'
+
 public class GalleryPickTest2 : MonoBehaviour {
 
     public Material textureMat;                 //Material applying texture.                                //テクスチャを適用するマテリアル

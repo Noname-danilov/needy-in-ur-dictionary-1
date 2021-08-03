@@ -7,8 +7,8 @@ using TMPro;
 
 public class WordTransfer : MonoBehaviour
 {
-    public string theWord1;
-    public string theWord2;
+    public string CheckWord1;
+    public string CheckWord2;
     public GameObject inputField_1;
     public GameObject inputField_2;
     public GameObject textDisplay;
@@ -25,10 +25,10 @@ public class WordTransfer : MonoBehaviour
     {
         FindObjectOfType<ButtonHider>().EnableCreateButton();
 
-        theWord1 = inputField_1.GetComponent<TMP_InputField>().text;
-        theWord2 = inputField_2.GetComponent<TMP_InputField>().text;
+        CheckWord1 = inputField_1.GetComponent<TMP_InputField>().text;
+        CheckWord2 = inputField_2.GetComponent<TMP_InputField>().text;
 
-        if (theWord2 == wordManager.random_word.native_word)
+        if (CheckWord2 == wordManager.random_word.native_word)
         {
             textDisplay.GetComponent<Text>().text = "Congratz!";
         }
@@ -37,7 +37,7 @@ public class WordTransfer : MonoBehaviour
             textDisplay.GetComponent<Text>().text = "You f'd up!";
         }
 
-        //textDisplay.GetComponent<Text>().text = "ur word is:" + theWord1 + " - " + theWord2;
+        //textDisplay.GetComponent<Text>().text = "ur word is:" + CheckWord1 + " - " + CheckWord2;
 
         Word word = wordManager.words[Random.Range(0, wordManager.words.Count)];
 
@@ -47,9 +47,9 @@ public class WordTransfer : MonoBehaviour
         inputField_2.GetComponent<TMP_InputField>().text = "";
 
 
-    }
+    } 
 
-    public void AddNewWord()
+    /* public void AddNewWord()
     {
 
         theWord1 = inputField_1.GetComponent<TMP_InputField>().text;
@@ -61,6 +61,7 @@ public class WordTransfer : MonoBehaviour
             native_word = theWord2
         });
 
-    }
+
+    } */
 
 }

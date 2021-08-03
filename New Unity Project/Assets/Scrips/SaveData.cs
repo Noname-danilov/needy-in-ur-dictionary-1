@@ -10,7 +10,7 @@ public class SaveData : MonoBehaviour
     public string ToJson()
     {
         WordManager wordManager = FindObjectOfType<WordManager>();
-        string JSON = JsonUtility.ToJson(wordManager);
+        string JSON = JsonUtility.ToJson(wordManager); //whole script
         Debug.Log($"ToJson: {JSON}");
         return JSON;
     }

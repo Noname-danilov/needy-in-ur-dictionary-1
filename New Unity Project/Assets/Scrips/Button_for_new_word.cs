@@ -12,7 +12,7 @@ public class Button_for_new_word : MonoBehaviour
     public Vector3 brickPosition = new Vector3(150, 450, 0);
     //public GameObject inst1;
     //public GameObject inst2;
-    public GameObject button_1;
+    public GameObject button_1; //привет 
 
 
     WordManager wordManager;

@@ -19,7 +19,7 @@ public class Enable : MonoBehaviour
 
     }
 
-    public void retarded_funcion()
+    public void retarded_funcion()//димаааааааааааааан сидииииииииииииииииииииитfs
     {
         if (TrueFalse)
         {
